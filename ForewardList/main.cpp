@@ -1,14 +1,18 @@
 #include<iostream>
 using namespace std;
 
+template<typename N>
+
+class ForwardList
+{
+
 class Element
 {
-	static int count;
-	int Data;//Значение элемента
+	N Data;//Значение элемента
 	Element* pNext;//Адрес следующео элемента
 
 public:
-	Element(int Data, Element* pNext = nullptr) :Data(Data), pNext(pNext)
+	Element(N Data, Element* pNext = nullptr) :Data(Data), pNext(pNext)
 	{
 		count++;
 		cout << "EConstructor:\t" << this << endl;
@@ -21,10 +25,7 @@ public:
 	friend class ForwardList;
 };
 
-int Element::count = 0;
 
-class ForwardList
-{
 	Element* Head;  //Голова списка - указывает на нулевой элемент списка
 	size_t size;
 public:
@@ -192,7 +193,7 @@ public:
 };
 
 //#define BASE_CHECK
-
+#define delimiter "\n--------------------------------------------------\n"
 void main()
 {
 	setlocale(LC_ALL, "ru");
@@ -214,12 +215,18 @@ void main()
 
 #endif // BASE_CHECK
 	
-	ForwardList list = { 3,5,8,13,21 };
+	ForwardList<int> list = { 3,5,8,13,21 };
 	//list.print();
 	for (int i : list)
 	{
 		cout << i << "\t";
 	}
+	cout << delimiter << endl;
+	/*for (ForwardList::Iterator it = list.begin(); it != list.end(); it++)
+	{
+		cout << *it << endl;
+	}*/
+	cout << delimiter << endl;
 	/*ForwardList list2;
 	list2 = list;
 	list2.print();*/
