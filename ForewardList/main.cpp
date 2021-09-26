@@ -192,7 +192,7 @@ public:
 };
 
 //#define BASE_CHECK
-
+#define delimiter "\n--------------------------------------------------\n"
 void main()
 {
 	setlocale(LC_ALL, "ru");
@@ -220,6 +220,12 @@ void main()
 	{
 		cout << i << "\t";
 	}
+	cout << delimiter << endl;
+	/*for (ForwardList::Iterator it = list.begin(); it != list.end(); it++)
+	{
+		cout << *it << endl;
+	}*/
+	cout << delimiter << endl;
 	/*ForwardList list2;
 	list2 = list;
 	list2.print();*/
