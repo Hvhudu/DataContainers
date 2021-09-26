@@ -58,10 +58,6 @@ public:
 		{
 			return this->Temp != other.Temp;
 		}
-		const int& operator*()const
-		{
-			return this->Temp->Data;
-		}
 		int& operator*()
 		{
 			return this->Temp->Data;
