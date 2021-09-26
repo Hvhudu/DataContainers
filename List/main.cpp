@@ -71,7 +71,7 @@ public:
 	};
 	Reverse_Iterator rbegin()
 		{
-			//return Tail;
+			this->Tail;
 		}
 	class Iterator
 	{
@@ -97,12 +97,7 @@ cout << "ItDestructor:\t" << this << endl;
 			Temp = Temp->pNext;
 			return *this;
 		}
-		Iterator& operator++(int)
-		{
-			Iterator old = *this;
-			Temp = Temp->pNext;
-			return old;
-		}
+		
 		bool operator==(const Iterator& other)const
 		{
 			return this->Temp == other.Temp;
@@ -115,10 +110,7 @@ cout << "ItDestructor:\t" << this << endl;
 		{
 			return this->Temp->Data;
 		}
-		int& operator*()
-		{
-			return this->Temp->Data;
-		}
+		
 	};
 	Iterator begin()
 	{
